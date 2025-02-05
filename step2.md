@@ -1,4 +1,4 @@
-## install APEX into your PDB
+## Install APEX into your PDB
 
 I've included a word document with screen shots
 
