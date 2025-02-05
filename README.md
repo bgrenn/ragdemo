@@ -9,17 +9,17 @@ This repository contains the pieces necessary to build a RAG demo using Exadata 
 2. Install the latest APEX release into the PDB you are going to be using for the demo.
    You also need to configure an ORDS server for APEX.
 
-4. Install Ollama on a host, and ensure that ollama can be accessed remotely.
+3. Install Ollama on a host, and ensure that ollama can be accessed remotely.
    You can also pull the models
     
-5.Create the schema for the application and ensure this user has the correct permissions
+4.Create the schema for the application and ensure this user has the correct permissions
 
-6. Add the objects for this schema
+5. Add the objects for this schema
 
-7. Log into APEX and configure a new workspace for this schema.
+6. Log into APEX and configure a new workspace for this schema.
 
-8. Log into the workspace in APEX and create a new application using the export file
+7. Log into the workspace in APEX and create a new application using the export file
 
-9. Load the model into the database so you can show both a DB model for embedding, and embedding from ollama
+8. Load the model into the database so you can show both a DB model for embedding, and embedding from ollama
 
    
