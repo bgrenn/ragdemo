@@ -86,7 +86,7 @@ procedure prc_add_prompt(
 
 procedure prc_cr_doc_vectors_pca is
     v_count integer;
-    v_embedding_endpoint   varchar2(500)   := 'http://10.80.162.93:11434';
+    v_embedding_endpoint   varchar2(500)   := 'http://{ip address}:11434';
     v_api_credential varchar2(100)         := 'OLLAMA_CRED';
     v_provider_embedding   varchar2(100)   := 'Ollama';
     v_text_endpoint     varchar2(100)   := '/api/embeddings';
