@@ -23,3 +23,4 @@ This repository contains the pieces necessary to build a RAG demo using Exadata 
 8. Load the model into the database so you can show both a DB model for embedding, and embedding from ollama
 
    
+Once completed, you can also use the chunking.png and upload it to the "shared component" static workspace items to have it displayed on page 60.
