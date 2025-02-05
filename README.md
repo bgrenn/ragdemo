@@ -12,7 +12,7 @@ This repository contains the pieces necessary to build a RAG demo using Exadata 
 3. Install Ollama on a host, and ensure that ollama can be accessed remotely.
    You can also pull the models
     
-4.Create the schema for the application and ensure this user has the correct permissions
+4. Create the schema for the application and ensure this user has the correct permissions
 
 5. Add the objects for this schema
 
