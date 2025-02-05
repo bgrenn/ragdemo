@@ -13,15 +13,18 @@ grant create mining model to {user name};
 
 ### Cloud credential used for Embedding calls with dbms_vector_chain
 
+~~~
 exec  DBMS_CLOUD.CREATE_CREDENTIAL( -
     CREDENTIAL_NAME => 'OLLAMA_CLOUD', -
     USER_OCID => 'dummy_OCID', -
     TENANCY_OCID => 'dummy_tenancy', -
     PRIVATE_KEY => 'dummy_KEY', -
     FINGERPRINT => 'dummy_fingerprint');
+~~~
 
 ###  credential used for Embedding calls DBMS_VECTOR_CHAIN
 
+~~~
   declare
   jo json_object_t;
 begin
@@ -32,9 +35,12 @@ begin
     params            => json(jo.to_string));
 end;
 /
+~~~
 
 ## Open up the ports on the DB side for for the user. You can specify specific ports if you want to limit it
 
+~~~
 EXEC DBMS_NETWORK_ACL_ADMIN.CREATE_ACL (acl => 'ACL_FILE_RAGDEMO.xml', description => 'ACL_FILE_1', principal => '{user name}', is_grant => TRUE, privilege => 'connect', start_date => null, end_date => null); 
 EXEC DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl => 'ACL_FILE_RAGDEMO.xml',principal => '{user name}',is_grant  => true,privilege => 'connect');
 EXEC DBMS_NETWORK_ACL_ADMIN.ASSIGN_ACL ( acl => 'ACL_FILE_RAGDEMO.xml', host => '*', lower_port => NULL, upper_port => NULL);
+~~~
