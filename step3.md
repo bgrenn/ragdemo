@@ -24,6 +24,6 @@
 | proxy setting used when pulling models   |Environment="https_proxy={proxy host}:80"        |
 | proxy setting used when pulling models   |Environment="https_proxy={proxy host}:80"        |
 | Model location                           |Environment="OLLAMA_MODELS={location}"           |
-        |
+
 
 ### In order to load larger models, my VM is set at 200 GB
