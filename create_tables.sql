@@ -49,21 +49,6 @@ CREATE TABLE "PROMPTS"
    ENABLE
    ) ;
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "TRG_DOCUMENTS_VECTOR" 
-after insert on DOCUMENTS
-for each row
-declare
-my_job number;
-begin
-dbms_job.submit(job => my_job, what => 'chathistory_pkg.prc_cr_doc_vectors_db;');     
-dbms_job.submit(job => my_job, what => 'chathistory_pkg.prc_cr_doc_vectors_pca;');  
-end;
-
-
-
-ALTER TRIGGER "TRG_DOCUMENTS_VECTOR" enable;
-/
-
 
  CREATE TABLE "DOCUMENTS_VECTOR_DB" 
    (	"ID" NUMBER(*,0) NOT NULL ENABLE, 
