@@ -1,5 +1,5 @@
 create or replace function Document_search (p_ai_message in varchar2,p_id in number,p_embedding in varchar2) return clob as
-   v_embedding_endpoint   varchar2(500)   := 'http://10.80.162.93:11434';
+   v_embedding_endpoint   varchar2(500)   := 'http://{ip address}:11434';
 
 
     v_vector_credential varchar2(100)   := 'OLLAMA_CLOUD';
