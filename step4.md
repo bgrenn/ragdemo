@@ -1,4 +1,4 @@
-## Execute scripts to create user and grant privileges
+## Execute scripts to create user and grant privileges as admin user
 
 ~~~
 Create user {user name} identified by {password};
@@ -11,7 +11,7 @@ grant create mining model to {user name};
 ## Execute scripts to create credentials
 
 
-### Cloud credential used for Embedding calls with dbms_vector_chain
+### Cloud credential used for Embedding calls with dbms_vector_chain logged in as application user
 
 ~~~
 exec  DBMS_CLOUD.CREATE_CREDENTIAL( -
@@ -22,7 +22,7 @@ exec  DBMS_CLOUD.CREATE_CREDENTIAL( -
     FINGERPRINT => 'dummy_fingerprint');
 ~~~
 
-###  credential used for Embedding calls DBMS_VECTOR_CHAIN
+###  credential used for Embedding calls DBMS_VECTOR_CHAIN  logged in as application user
 
 ~~~
   declare
@@ -37,7 +37,7 @@ end;
 /
 ~~~
 
-## Open up the ports on the DB side for for the user. You can specify specific ports if you want to limit it
+## Open up the ports on the DB side for for the user. You can specify specific ports if you want to limit it logged in as admin user
 
 ~~~
 EXEC DBMS_NETWORK_ACL_ADMIN.CREATE_ACL (acl => 'ACL_FILE_RAGDEMO.xml', description => 'ACL_FILE_1', principal => '{user name}', is_grant => TRUE, privilege => 'connect', start_date => null, end_date => null); 
