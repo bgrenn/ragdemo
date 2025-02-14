@@ -242,7 +242,7 @@ begin
 dbms_job.submit(job => my_job, what => 'chathistory_pkg.prc_cr_doc_vectors_db;');     
 dbms_job.submit(job => my_job, what => 'chathistory_pkg.prc_cr_doc_vectors_pca;');  
 end;
-
+/
 
 
 ALTER TRIGGER "TRG_DOCUMENTS_VECTOR" enable;
