@@ -11,6 +11,7 @@ create or replace function gen_ai_chat_documents_db (p_ai_message in varchar2,p_
     v_chat_endpoint     varchar2(100)      := '/api/generate';
     v_model_embed       varchar2(100)      := 'mxbai-embed-large';
     v_model_query       varchar2(100)      := 'llama3.2';
+    v_model_timout       number            := 300;
 
     v_db_provider       varchar2(100)       := 'database';
     v_db_model_embed    varchar2(100)       := 'ALL_MINILM_L12_V2';
@@ -167,6 +168,7 @@ v_params := '{' ||
                '"provider" : "' || v_provider || '",' ||
                '"credential_name" : "' || v_api_credential || '",' ||
                '"url" : "' || v_embedding_endpoint || v_chat_endpoint ||'",' ||
+               '"transfer_timeout" : "' || v_model_timeout ||'",' ||
                '"model" : "' || v_model_query || '"' ||
                '}';
 
